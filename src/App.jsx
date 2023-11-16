@@ -1,13 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Notes from "./pages/Notes.jsx";
+import Create from "./pages/Create.jsx";
 
-import './App.css'
 
 function App() {
 
 
   return (
-    <>
-      <h1>hello</h1>
-    </>
+
+        <Router>
+            <Routes>
+                <Route exact path="/" element={<Notes/>}/>
+               <Route path="/create" element={<Create/>} />
+
+            </Routes>
+        </Router>
+
   )
 }
 

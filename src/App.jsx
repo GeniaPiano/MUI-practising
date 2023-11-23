@@ -3,6 +3,7 @@ import Notes from "./pages/Notes.jsx";
 import Create from "./pages/Create.jsx";
 import { ThemeProvider, createTheme} from '@mui/material/styles';
 import {purple} from "@mui/material/colors";
+import Layout from "./components/Layout.jsx";
 
 const theme = createTheme({
     palette: {
@@ -25,10 +26,12 @@ function App() {
       return (
             <ThemeProvider theme={theme}>
                 <Router>
-                    <Routes>
-                        <Route exact path="/" element={<Notes/>}/>
-                        <Route path="/create" element={<Create/>} />
-                    </Routes>
+                    <Layout>
+                        <Routes>
+                            <Route exact path="/" element={<Notes/>}/>
+                            <Route path="/create" element={<Create/>} />
+                        </Routes>
+                    </Layout>
                 </Router>
             </ThemeProvider>
   )
